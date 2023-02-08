@@ -36,4 +36,8 @@ class Dealership
   def details
     Hash["total_value", total_value, "address", @address]
   end
+
+  def average_price_of_car
+    (total_value / @inventory_count).to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse
+  end
 end
