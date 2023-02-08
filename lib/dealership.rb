@@ -40,4 +40,8 @@ class Dealership
   def average_price_of_car
     (total_value / @inventory_count).to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse
   end
+
+  def cars_sorted_by_price
+    sorted = @inventory.sort_by {|car| car.total_cost}
+  end
 end
