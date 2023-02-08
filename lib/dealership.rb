@@ -26,4 +26,14 @@ class Dealership
     end
     cars_by_make
   end
+
+  def total_value
+    total = 0
+    @inventory.each {|car| total += car.total_cost}
+    total
+  end
+
+  def details
+    Hash["total_value", total_value, "address", @address]
+  end
 end
